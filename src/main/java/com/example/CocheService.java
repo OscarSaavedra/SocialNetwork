@@ -1,10 +1,18 @@
 package com.example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class CocheService {
     @Autowired
     private CocheRepository cocheRepository;
+    @Autowired//autoconectar
+    private PersonaRepository personaRepository;
 
     public void testCoche(){
         Coche coche1=new Coche();
@@ -13,15 +21,27 @@ public class CocheService {
         coche1.setModelo("Turbo");
         coche1.setPrecio(200000);
         coche1.setMatricula(2452745L);
-        cocheRepository.save(coche1);
+
+
+        Persona persona10 = new Persona();
+        persona10.setNombre("Pedro");
+        persona10.setAge(23);
+        coche1.setPropietario(persona10);
+        personaRepository.save(persona10);//primero se guarda la persona
+        cocheRepository.save(coche1);//luego se guarda el coche. IMPORTANTE
+
 
         Coche coche2=new Coche();
         coche2.setMarca("Renault");
-        coche2.setAñoFabricacion(2000);
+        coche2.setAñoFabricacion(1990);
         coche2.setModelo("Familiar");
         coche2.setPrecio(50000);
-        coche2.setMatricula(4134245L);
+        coche2.setMatricula(9867245L);
+
+        Persona ivan=personaRepository.getOne(1L);
+        coche2.setPropietario(ivan);
         cocheRepository.save(coche2);
+
 
         Coche coche3=new Coche();
         coche3.setMarca("BMW");
@@ -41,10 +61,11 @@ public class CocheService {
 
         Coche coche5=new Coche();
         coche5.setMarca("Renault");
-        coche5.setAñoFabricacion(2000);
+        coche5.setAñoFabricacion(2005);
         coche5.setModelo("Diesel");
         coche5.setPrecio(70000);
         coche5.setMatricula(4134245L);
+        coche5.setPropietario(ivan);
         cocheRepository.save(coche5);
 
         Coche coche6=new Coche();
@@ -88,6 +109,15 @@ public class CocheService {
         coche10.setMatricula(14353445L);
         cocheRepository.save(coche10);
 
+        Coche coche11=new Coche();
+        coche11.setMarca("Renault");
+        coche11.setAñoFabricacion(20015);
+        coche11.setModelo("Deluxe");
+        coche11.setPrecio(250000);
+        coche11.setMatricula(2537647L);
+        coche11.setPropietario(ivan);
+        cocheRepository.save(coche11);
+
         System.out.println("Coches con año de fabricación menor o igual a 2000");
         System.out.println(cocheRepository.findByAñoFabricacionLessThanEqual(2000));
 
@@ -128,5 +158,42 @@ public class CocheService {
 
         System.out.println("La media de precio de todos los Volkswagen");
         System.out.println(cocheRepository.obtenerMediaPorMarca("Volkswagen"));
+
+        System.out.println("Muestra todos los coches que tiene Ivan");
+        System.out.println(cocheRepository.obtenerCoches(ivan));
+
+        System.out.println("Muestra todos los coches que tiene Ivan y que superen los 200.000 euros");
+        System.out.println(cocheRepository.obtenerCochesAndPrecioGreaterThanEqual(ivan,200000));
+
+        System.out.println("Muestra todos los coches que tiene Ivan cuyo año de fabricación se situa entre 2000 y 2015");
+        System.out.println(cocheRepository.obtenerCochesEntreAños(ivan,2000,2015));
+
+        System.out.println("Mostrar todos los coches de las personas con mas de 23 años");
+        System.out.println(cocheRepository.obtenerCochesEdadMasGrandeOIgual(23));
+
+        System.out.println("Mostrar todos los coches de personas entre 20 y 24 años");
+        System.out.println(cocheRepository.obtenerCochesEdadEntre(20,24));
+
+        System.out.println("java 5");
+
+        List<Object[]> estadisticasMarcaList =cocheRepository.findByCocheArimeticaAndPrecioMaxIs();
+
+        for (Object[] estadisticasMarca : estadisticasMarcaList) {
+            System.out.println("marca: " + estadisticasMarca[0]);
+            System.out.println("media: " + estadisticasMarca[1]);
+            System.out.println("max: " + estadisticasMarca[2]);
+            System.out.println("min: " + estadisticasMarca[3]);
+            System.out.println("------------------------------------------------------------------");
+        }//forma de realizarlo con java5
+
+
+        System.out.println("/////////////////////////////////////");
+
+        for (Object[] porAños:cocheRepository.cuantosCochesPorAño()){
+            Integer año=(Integer)porAños[0];
+            System.out.println("Año de fabricación: "+año);
+            System.out.println("Cantidad coches: "+porAños[1]);
+            System.out.println("Listado de coches por año: "+cocheRepository.findByAñoFabricacion(año));
+        }//repasar
     }
 }

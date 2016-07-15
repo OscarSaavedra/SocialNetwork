@@ -1,10 +1,9 @@
-package com.example;
+package com.example.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Locale;
 
 //seleccionar persistance
 @Entity//significa que lo convertimos en una entidad de la base de datos

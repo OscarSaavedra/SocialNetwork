@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Locale;
 
+//seleccionar persistance
 @Entity//significa que lo convertimos en una entidad de la base de datos
 public class Persona {
     @Id//identificador en la base de datos
@@ -52,6 +53,7 @@ public class Persona {
                 ", age=" + age +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,19 +61,12 @@ public class Persona {
 
         Persona persona = (Persona) o;
 
-        if (getId() != null ? !getId().equals(persona.getId()) : persona.getId() != null) return false;
-        if (getNombre() != null ? !getNombre().equals(persona.getNombre()) : persona.getNombre() != null) return false;
-        if (getApellido() != null ? !getApellido().equals(persona.getApellido()) : persona.getApellido() != null)
-            return false;
-        return getAge() != null ? getAge().equals(persona.getAge()) : persona.getAge() == null;
+        return getId().equals(persona.getId());
 
     }
+
     @Override
     public int hashCode() {
-        int result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + (getNombre() != null ? getNombre().hashCode() : 0);
-        result = 31 * result + (getApellido() != null ? getApellido().hashCode() : 0);
-        result = 31 * result + (getAge() != null ? getAge().hashCode() : 0);
-        return result;
+        return getId().hashCode();
     }
 }

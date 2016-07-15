@@ -42,29 +42,6 @@ public class PersonaService {
 
 
 
-
-
-
-        //crear entidad coche: tendrá ID, marca, modelo, año de fabricacion,
-        //el precio y la matricula.
-        //Hacer consultas de: coches cuyo año de fabricación
-        //sea igual o mayor a un año determinado y alreves, luego entre un rango de años.
-        //Lo mismo pero con los precios.
-        //Consultar por matrícula, si es de uno solo, devolver objeto y no lista.
-        //Consultar todos los coches de una determinada marca.
-        //Consultar todos los coches de una marca y modelo.
-
-
-        //Consultar todos los coches de una determinada marca y que el precio sea inferior o igual
-        //a un valor.
-        //Consultar todos los coches que sean de una marca y un modelo concreto y que además tengan
-        //un precio igual o superior.
-        //Consultar el precio medio de todos los coches de una determinada marca. CHUNGO (groupBy).
-
-
-
-
-
         System.out.println(personaRepository.findOne(2L));
         System.out.println(personaRepository.findByNombre("Noelia"));
         System.out.println(personaRepository.findByNombre("Ricard"));

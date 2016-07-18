@@ -1,112 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - @localhost" uuid="f6ccb1da-9e75-4c74-ab7b-f5ef3398af80">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="MySQL - @localhost [2]" uuid="e91d90dd-3ebf-4ab6-90a6-e584811a9a45">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="MySQL - @localhost [3]" uuid="fadd8b1f-97fe-4cc3-afd2-d019b8076a4f">
     <database-info product="MySQL" version="5.6.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
-      <schema id="1" name="demopersona"/>
-      <table id="2" parent="1" name="coche"/>
-      <table id="3" parent="1" name="pareja"/>
-      <table id="4" parent="1" name="persona"/>
-      <column id="5" parent="2" name="id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="6" parent="2" name="año_fabricacion">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="7" parent="2" name="marca">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="8" parent="2" name="matricula">
-        <data-type>bigint(20)</data-type>
-      </column>
-      <column id="9" parent="2" name="modelo">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="10" parent="2" name="precio">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="11" parent="2" name="propietario_id">
-        <data-type>bigint(20)</data-type>
-      </column>
-      <index id="12" parent="2" name="FK_op0rhrlpoxchhft7s68n0q924">
-        <columns>propietario_id</columns>
-        <desc-columns></desc-columns>
-      </index>
-      <key id="13" parent="2" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <foreign-key id="14" parent="2" name="FK_op0rhrlpoxchhft7s68n0q924">
-        <columns>propietario_id</columns>
-        <ref-key>~.persona.PRIMARY</ref-key>
-        <cascade-update-rule>restrict</cascade-update-rule>
-        <cascade-delete-rule>restrict</cascade-delete-rule>
-      </foreign-key>
-      <column id="15" parent="3" name="id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="16" parent="3" name="p1_id">
-        <data-type>bigint(20)</data-type>
-      </column>
-      <column id="17" parent="3" name="p2_id">
-        <data-type>bigint(20)</data-type>
-      </column>
-      <index id="18" parent="3" name="FK_g8dcqo3evsli4p3btkrqmcwtb">
-        <columns>p2_id</columns>
-        <desc-columns></desc-columns>
-      </index>
-      <index id="19" parent="3" name="FK_iw9ks0t3f8c80oyhqutq5f4hv">
-        <columns>p1_id</columns>
-        <desc-columns></desc-columns>
-      </index>
-      <key id="20" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <foreign-key id="21" parent="3" name="FK_g8dcqo3evsli4p3btkrqmcwtb">
-        <columns>p2_id</columns>
-        <ref-key>~.persona.PRIMARY</ref-key>
-        <cascade-update-rule>restrict</cascade-update-rule>
-        <cascade-delete-rule>restrict</cascade-delete-rule>
-      </foreign-key>
-      <foreign-key id="22" parent="3" name="FK_iw9ks0t3f8c80oyhqutq5f4hv">
-        <columns>p1_id</columns>
-        <ref-key>~.persona.PRIMARY</ref-key>
-        <cascade-update-rule>restrict</cascade-update-rule>
-        <cascade-delete-rule>restrict</cascade-delete-rule>
-      </foreign-key>
-      <column id="23" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-        <sequence-identity>1</sequence-identity>
-      </column>
-      <column id="24" parent="4" name="age">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="25" parent="4" name="apellido">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="26" parent="4" name="nombre">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="27" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-    </database-model>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5"/>
+  </data-source>
+  <data-source name="MySQL - @localhost [2]" uuid="e91d90dd-3ebf-4ab6-90a6-e584811a9a45">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="MySQL - @localhost [3]" uuid="fadd8b1f-97fe-4cc3-afd2-d019b8076a4f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

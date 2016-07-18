@@ -57,13 +57,16 @@ public class Pareja {
 
         Pareja pareja = (Pareja) o;
 
+        if (!getId().equals(pareja.getId())) return false;
         if (!getP1().equals(pareja.getP1())) return false;
         return getP2().equals(pareja.getP2());
 
     }
+
     @Override
     public int hashCode() {
-        int result = getP1().hashCode();
+        int result = getId().hashCode();
+        result = 31 * result + getP1().hashCode();
         result = 31 * result + getP2().hashCode();
         return result;
     }

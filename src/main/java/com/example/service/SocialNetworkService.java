@@ -93,11 +93,14 @@ public class SocialNetworkService {
             cola.add(primeroLista);
             visitado.add(primeroLista);
 
+            boolean encontrado=false;
+
             while(!cola.isEmpty()){
                 primeroLista = cola.poll();
                 System.out.println("Voy a visitar la persona: ");
                 System.out.println(primeroLista);
                 if (primeroLista.equals(personaDestino)){
+                    encontrado=true;
                     break;
                 }else{
                     for(Persona amigo : getAmistades(primeroLista)){
@@ -110,18 +113,22 @@ public class SocialNetworkService {
                 }
             }
 
-            for(Persona persona = personaDestino;
-                persona != null;
-                persona = predecesor.get(persona)) {
+            if(encontrado){
+                for(Persona persona = personaDestino;
+                    persona != null;
+                    persona = predecesor.get(persona)) {
 
-                camino.add(persona);
-            }
-
-            Collections.reverse(camino);
-
-            System.out.println("Muestro el camino mínimo entre Oscar y Ariadna");
+                    camino.add(persona);
+                    }
+                Collections.reverse(camino);
+                }else
+                    {
+                    System.out.println("No hay conexión entre "+personaInicio.getNombre()
+                                        +" y "+personaDestino.getNombre());
+                    }
+            System.out.println("Muestro el camino mínimo entre "+personaInicio.getNombre()
+                                        +" y "+personaDestino.getNombre());
             System.out.println(camino);
-
             return camino;
         }
     }

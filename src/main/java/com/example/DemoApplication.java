@@ -71,6 +71,11 @@ public class DemoApplication {
         ariadna.setAge(24);
         socialNetworkService.addPerson(ariadna);
 
+        Persona ana=new Persona();
+        ana.setNombre("Ana");
+        ana.setAge(20);
+        socialNetworkService.addPerson(ana);
+
         socialNetworkService.addAmistades(oscar,jorge);
         socialNetworkService.addAmistades(oscar,carlos);
         socialNetworkService.addAmistades(oscar,laura);
@@ -86,8 +91,12 @@ public class DemoApplication {
 
         List<Persona> caminoMinimo=socialNetworkService.getConectionPath(oscar,ariadna);
 
-        System.out.println("Están conectados a una distancia de: ["+(caminoMinimo.size()-1)+"]");
-        System.out.println("////////////////////////////////////////////////////////////");
+        if(caminoMinimo.size()>0)
+        {
+            System.out.println("Están conectados a una distancia de: ["+(caminoMinimo.size()-1)+"]");
+            System.out.println("////////////////////////////////////////////////////////////");
+        }
+
 
 
         Persona novia=new Persona();

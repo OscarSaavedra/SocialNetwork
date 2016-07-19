@@ -61,15 +61,6 @@ public class SocialNetworkService {
         }
     }
 
-
-    /*public void testSocialNetwork(){
-        Persona ivan=personaRepository.getOne(1L);
-        Persona dimple=personaRepository.getOne(2L);
-        addPareja(ivan,dimple);
-
-        System.out.println(parejaRepository);
-    }*/
-
     public List<Persona> getAmistades(Persona persona){
         List<Amistad>amistades=amistadRepository.getAmistades(persona);
         List<Persona> resultado=new ArrayList<>();

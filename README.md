@@ -7,5 +7,5 @@ Si queremos ir de un punto del grafo a otro punto que no está conectado de form
 
 La búsqueda se realiza de forma única, será mas eficiente si añado búsquedas en paralelo (como mínimo una).
 
-# SocialNetwork
+SocialNetwork
 SN

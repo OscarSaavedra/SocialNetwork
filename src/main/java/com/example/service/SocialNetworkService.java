@@ -121,13 +121,13 @@ public class SocialNetworkService {
                     camino.add(persona);
                     }
                 Collections.reverse(camino);
+                System.out.println("Muestro el camino mínimo entre "+personaInicio.getNombre()
+                        +" y "+personaDestino.getNombre());
                 }else
                     {
                     System.out.println("No hay conexión entre "+personaInicio.getNombre()
                                         +" y "+personaDestino.getNombre());
                     }
-            System.out.println("Muestro el camino mínimo entre "+personaInicio.getNombre()
-                                        +" y "+personaDestino.getNombre());
             System.out.println(camino);
             return camino;
         }

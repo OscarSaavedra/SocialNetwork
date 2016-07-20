@@ -1,4 +1,5 @@
 ###Algoritmo de búsqueda para grafos sin peso
+
 El algoritmo de búsqueda de caminos cortos funciona por definición cortando la búsqueda en el momento que encuentra la conexión posible, y por tiempo de ejecución siempre acabará en el tiempo mas corto, es decir el camino menor.
 
 Aun es ineficiente bajo ciertas circunstancias:

@@ -112,7 +112,7 @@ public class DemoApplication {
         dimple.setAge(21);
         socialNetworkService.addPerson(dimple);
 
-        socialNetworkService.addPareja(ivan,dimple);
+        /*socialNetworkService.addPareja(ivan,dimple);
         System.out.println("La pareja de Ivan");
         System.out.println(socialNetworkService.getPareja(ivan));
         socialNetworkService.addAmistades(ivan, ismael);
@@ -122,6 +122,6 @@ public class DemoApplication {
         System.out.println(socialNetworkService.getAmistades(ivan));
 
         System.out.println("Los amigos de judith son:");
-        System.out.println(socialNetworkService.getAmistades(judith));
+        System.out.println(socialNetworkService.getAmistades(judith));*/
     }
 }

@@ -8,5 +8,9 @@ Aun es ineficiente bajo ciertas circunstancias:
 
 2.-La búsqueda se realiza de forma única, será mas eficiente si añado búsquedas en paralelo (como mínimo una).
 
+To do list:
+  -Aumentar la velocidad de búsqueda (x4)
+  -Optimizar la búsqueda cuando se intenta ir de un Subgrafo N a un Subgrafo N+1
+
 SocialNetwork
 SN
